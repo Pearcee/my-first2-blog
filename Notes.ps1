@@ -26,7 +26,10 @@ git push
 
 git status
 git add --all .
-git commit -m "Added views to create/edit blog post inside the site."
+git commit -m "API"
 git push
 
+python manage.py startapp article
 
+
+Last note
