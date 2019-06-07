@@ -5,7 +5,9 @@ venv\Scripts\activate
 python -m pip install --upgrade pip
 python -m pip install --upgrade django
 pip install pylint
+pip install djangorestframework
 pip install -r requirements.txt
+pip freeze > requirements.txt
 
 django-admin.exe startproject mysite .
 python manage.py startapp blog
@@ -26,7 +28,9 @@ git push
 
 git status
 git add --all .
-git commit -m "Added views to create/edit blog post inside the site."
+git commit -m "API"
 git push
 
-
+python manage.py startapp api
+python manage.py makemigrations
+python manage.py migrate
