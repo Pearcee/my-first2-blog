@@ -26,10 +26,12 @@ git push
 
 git status
 git add --all .
-git commit -m "API"
+git commit -m "index"
 git push
 
 python manage.py startapp article
 
+
+python manage.py startapp pages
 
 Last note
