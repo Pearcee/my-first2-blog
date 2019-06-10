@@ -34,3 +34,19 @@ git push
 python manage.py startapp api
 python manage.py makemigrations
 python manage.py migrate
+
+git commit -m "index"
+git push
+
+python manage.py startapp article
+
+
+python manage.py startapp pages
+
+Last note
+
+cd A:\GIT\djangogirls\pages\static\css\images
+$source_photo = "trees.jpg"
+$destination = "trees.jpg"
+$scale = 30
+Resize-Image -InputFile $source_photo -Scale $scale -OutputFile $destination+$scale  -Verbose
