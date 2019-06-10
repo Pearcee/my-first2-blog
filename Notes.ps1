@@ -5,7 +5,9 @@ venv\Scripts\activate
 python -m pip install --upgrade pip
 python -m pip install --upgrade django
 pip install pylint
+pip install djangorestframework
 pip install -r requirements.txt
+pip freeze > requirements.txt
 
 django-admin.exe startproject mysite .
 python manage.py startapp blog
@@ -26,6 +28,13 @@ git push
 
 git status
 git add --all .
+git commit -m "API"
+git push
+
+python manage.py startapp api
+python manage.py makemigrations
+python manage.py migrate
+
 git commit -m "index"
 git push
 
@@ -35,3 +44,9 @@ python manage.py startapp article
 python manage.py startapp pages
 
 Last note
+
+cd A:\GIT\djangogirls\pages\static\css\images
+$source_photo = "trees.jpg"
+$destination = "trees.jpg"
+$scale = 30
+Resize-Image -InputFile $source_photo -Scale $scale -OutputFile $destination+$scale  -Verbose
