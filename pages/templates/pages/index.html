@@ -6,28 +6,14 @@
 {% endblock %}
 
 {% block content %}
-<<<<<<< HEAD
 
-=======
-    <header class="header">
-        {% if user.is_authenticated %}
-            <a href="/blog" class="header-link">Blog</a>
-            <a href="/api" class="header-link">API</a>
-            <a href="#" class="header-link">Log out</a>
-        {% else %}
-            <div class="header-text">Sign in via:</div>
-            <a href="{% url "social:begin" "spotify" %}" class="header-link">Spotify</a>
-            <a href="{% url "social:begin" "deezer" %}" class="header-link">Deezer</a>
-        {% endif %}
-    </header>
->>>>>>> 5e4973f6f09a0c0ce9c539a15fba91c8bdba973f
+
     <section class="landing-section landing-main">
 
         <div class="landing-section-content">
-             <h1 class="brand">MuN</h1>
+             <h1 >MuN</h1>
             <h2>
-            <span class="brand-text">Mu</span>sic
-            <span class="brand-text">N</span>otifier
+            Stuff
             </h2>
             <p class="landing-main-text">
                 Got tired of missing out on releases from your favourite artists?
@@ -38,17 +24,10 @@
     </section>
     <section class="landing-section langing-features">
         <section class="landing-feature feature-music-services">
-            <h2>Connect your favourite <span class="brand-text">mu</span>sic services</h2>
+            <h2>Connect your favourite music services</h2>
             <ul>
                 <li>Spotify</li>
                 <li>Deezer</li>
-            </ul>
-        </section>
-        <section class="landing-feature feature-notifications">
-            <h2>Get <span class="brand-text">n</span>otifications wherever you want them</h2>
-            <ul>
-                <li>Email</li>
-                <li>Telegram</li>
             </ul>
         </section>
     </section>

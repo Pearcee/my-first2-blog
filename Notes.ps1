@@ -6,6 +6,7 @@ python -m pip install --upgrade pip
 python -m pip install --upgrade django
 pip install pylint
 pip install djangorestframework
+pip install rest_framework
 pip install -r requirements.txt
 pip freeze > requirements.txt
 
@@ -28,7 +29,7 @@ git push
 
 git status
 git add --all .
-git commit -m "API"
+git commit -m "99%"
 git push
 
 python manage.py startapp api

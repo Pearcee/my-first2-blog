@@ -1,14 +1,9 @@
 <!DOCTYPE html>
-{% load static %}
-<<<<<<< HEAD
-<html lang="GB">
-    <head>
-        <meta charset="utf-8"/>
-=======
+{% load static %}        
 <html lang="en">
     <head>
+        <meta charset="utf-8"/>
         <meta name="Description" content="Steven, Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
->>>>>>> 5e4973f6f09a0c0ce9c539a15fba91c8bdba973f
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{% static 'tick.png' %}"/>
         {% block head %}
@@ -19,13 +14,12 @@
         <header class="header">
             {% if user.is_authenticated %}
                 <div class="topnav" id="myTopnav">
+                    <a href="index" class=" header-link">Home</a>
                     <a href="/blog" class="header-link">Blog</a>
                     <a href="/api" class="header-link">API</a>
-
-                    <a href="#home" class="active">Home</a>
-                    <a href="#news">News</a>
-                    <a href="#contact">Contact</a>
-                    <div class="dropdown">
+                    <a href="#news" class="header-link">News</a>
+                    <a href="#contact" class="header-link">Contact</a>
+                    <div class="dropdown header-link" >
                         <button class="dropbtn">Dropdown 
                         <i class="fa fa-caret-down"></i>
                         </button>
@@ -33,21 +27,8 @@
                         <a href="#">Link 1</a>
                         <a href="#">Link 2</a>
                         <a href="#">Link 3</a>
-                        </div>
-                </div> 
-                <a href="#about">About</a>
+                    </div>
                 </div>
-{% comment %} 
-                    <a href="/blog" class="header-link">Blog</a>
-                    <a href="/api" class="header-link">API</a>
-                    <a href="#" class="header-link">Log out</a>
-
-                    <a href="{% url 'home' %}" class="navbar-brand">Home</a>
-                    <a href="{% url 'about' %}" class="navbar-item">About</a>
-                    <a href="{% url 'contact' %}" class="navbar-item">Contact</a> {% endcomment %}
-                </div>
-
-
             {% else %}
                 <div class="header-text">Sign in via:</div>
                 <a href="{% url "social:begin" "spotify" %}" class="header-link">Spotify</a>
