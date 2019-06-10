@@ -2,22 +2,11 @@
 {% load static %}
 
 {% block head %}
-  <title>MuN: Music Notifier</title>
-  <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+  <title>Me Web Site</title>
 {% endblock %}
 
 {% block content %}
-    <header class="header">
-        {% if user.is_authenticated %}
-            <a href="/blog" class="header-link">Settings</a>
-            <a href="/api" class="header-link">Latest releases</a>
-            <a href="#" class="header-link">Log out</a>
-        {% else %}
-            <div class="header-text">Sign in via:</div>
-            <a href="{% url "social:begin" "spotify" %}" class="header-link">Spotify</a>
-            <a href="{% url "social:begin" "deezer" %}" class="header-link">Deezer</a>
-        {% endif %}
-    </header>
+
     <section class="landing-section landing-main">
 
         <div class="landing-section-content">

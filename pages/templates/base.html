@@ -1,13 +1,59 @@
 {% load static %}
-<html>
+<html lang="GB">
     <head>
+        <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="shortcut icon" href="{% static 'tick.png' %}"/>
         {% block head %}
         {% endblock %}
+        <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
     <body>
+        <header class="header">
+            {% if user.is_authenticated %}
+                <div class="topnav" id="myTopnav">
+                    <a href="/blog" class="header-link">Blog</a>
+                    <a href="/api" class="header-link">API</a>
+
+                    <a href="#home" class="active">Home</a>
+                    <a href="#news">News</a>
+                    <a href="#contact">Contact</a>
+                    <div class="dropdown">
+                        <button class="dropbtn">Dropdown 
+                        <i class="fa fa-caret-down"></i>
+                        </button>
+                        <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                        </div>
+                </div> 
+                <a href="#about">About</a>
+                </div>
+{% comment %} 
+                    <a href="/blog" class="header-link">Blog</a>
+                    <a href="/api" class="header-link">API</a>
+                    <a href="#" class="header-link">Log out</a>
+
+                    <a href="{% url 'home' %}" class="navbar-brand">Home</a>
+                    <a href="{% url 'about' %}" class="navbar-item">About</a>
+                    <a href="{% url 'contact' %}" class="navbar-item">Contact</a> {% endcomment %}
+                </div>
+
+
+            {% else %}
+                <div class="header-text">Sign in via:</div>
+                <a href="{% url "social:begin" "spotify" %}" class="header-link">Spotify</a>
+                <a href="{% url "social:begin" "deezer" %}" class="header-link">Deezer</a>
+            {% endif %}
+        </header>
         {% block content %}
         {% endblock %}
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2018</p>
+        </footer>
+        
     </body>
 </html>
