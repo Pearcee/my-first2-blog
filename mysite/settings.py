@@ -42,6 +42,8 @@ INSTALLED_APPS = [
     'api',
     'article',
     'pages',
+    'posts',
+    'pwa',
 ]
 
 MIDDLEWARE = [

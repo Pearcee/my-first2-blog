@@ -7,4 +7,5 @@ urlpatterns = [
     path('api/', include('article.urls')),    
     path('blog', include('blog.urls')),
     path('index', include('pages.urls')),
+    path('posts', include('posts.urls')),
 ]
