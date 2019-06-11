@@ -5,6 +5,8 @@
         <meta charset="utf-8"/>
         <meta name="Description" content="Steven, Illustrator: P. Picture, Category: Books, Price: $17.99, Length: 784 pages">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
         <link rel="shortcut icon" href="{% static 'tick.png' %}"/>
         {% block head %}
         {% endblock %}
@@ -17,8 +19,7 @@
                     <a href="index" class=" header-link">Home</a>
                     <a href="/blog" class="header-link">Blog</a>
                     <a href="/api" class="header-link">API</a>
-                    <a href="#news" class="header-link">News</a>
-                    <a href="#contact" class="header-link">Contact</a>
+                    <a href="contact" class="header-link">Contact</a>
                     <div class="dropdown header-link" >
                         <button class="dropbtn">Dropdown 
                         <i class="fa fa-caret-down"></i>
@@ -31,8 +32,7 @@
                 </div>
             {% else %}
                 <div class="header-text">Sign in via:</div>
-                <a href="{% url "social:begin" "spotify" %}" class="header-link">Spotify</a>
-                <a href="{% url "social:begin" "deezer" %}" class="header-link">Deezer</a>
+                {% lorem  %}
             {% endif %}
         </header>
         {% block content %}
