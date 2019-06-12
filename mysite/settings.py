@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'blog',
     'api',
     'article',
+    'myapp',
     'pages',
     'posts',
     'pwa',

@@ -8,4 +8,5 @@ urlpatterns = [
     path('blog', include('blog.urls')),
     path('index', include('pages.urls')),
     path('posts', include('posts.urls')),
+    path('myapp', include('myapp.urls')),
 ]
