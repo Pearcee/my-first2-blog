@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+{% load pwa %}
+{% load static %}      
+<html lang="en">
+<head>
+	{% progressive_web_app_meta %}
+	<title>Steve</title>
+	<meta charset="utf-8"/>
+	<meta name="Description" content="Steven, Illustrator: Steve, Category: Books, Price: $17.99, Length: 784 pages">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/stevestyle.css' %}">
+</head>
+	<body>
+		<h1>Steve</h1>
+		{% block content %}
+        {% endblock %}
+	</body>
+</html>
+
