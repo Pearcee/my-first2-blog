@@ -6,7 +6,7 @@ python -m pip install --upgrade pip
 python -m pip install --upgrade django
 pip install pylint
 pip install djangorestframework
-pip install rest_framework
+pip install django-pwa
 pip install -r requirements.txt
 pip freeze > requirements.txt
 
