@@ -35,6 +35,8 @@ git push
 python manage.py startapp api
 python manage.py makemigrations
 python manage.py migrate
+python manage.py createsuperuser
+python manage.py runserver
 
 git commit -m "steve"
 git push
