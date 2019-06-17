@@ -42,6 +42,7 @@ INSTALLED_APPS = [
 
     'article',    
     'blog',
+    'bootstrap4',
     'myapp',
     'pages',
     'posts',
