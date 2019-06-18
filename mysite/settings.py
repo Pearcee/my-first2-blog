@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'api',
 
-    'article',    
+    'article',
     'blog',
     'bootstrap4',
     'myapp',
@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'posts',
     'pwa',
     'stevelanding',
+    'w3',
 ]
 
 MIDDLEWARE = [
