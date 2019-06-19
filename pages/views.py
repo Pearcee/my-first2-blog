@@ -6,3 +6,6 @@ def index(request):
 
 def contact(request):
     return render(request, 'pages/contact.html')
+
+def blank(request):
+    return render(request, 'pages/blank.html')

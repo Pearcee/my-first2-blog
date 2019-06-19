@@ -88,6 +88,11 @@ li {
     background-size: cover;
 }
 
+.landing-main2 {
+    background: url(images/trees.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
 .landing-main-text {
     padding: 1rem;
 }
