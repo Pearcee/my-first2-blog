@@ -8,8 +8,7 @@
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         
         <link rel="shortcut icon" href="{% static 'tick.png' %}"/>
-        {% block head %}
-        {% endblock %}
+        {% block head %}        {% endblock %}
         <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     </head>
     <body>
@@ -17,8 +16,8 @@
             {% if user.is_authenticated %}
                 <div class="topnav" id="myTopnav">
                     <a href="index" class=" header-link">Home</a>
+                    <a href="blank" class="header-link">Blank</a>
                     <a href="/blog" class="header-link">Blog</a>
-                    <a href="/api" class="header-link">API</a>
                     <a href="contact" class="header-link">Contact</a>
                     <div class="dropdown header-link" >
                         <button class="dropbtn">Dropdown 
@@ -26,7 +25,8 @@
                         </button>
                         <div class="dropdown-content">
                         <a href="posts" >Posts</a>
-                        <a href="#">Link 2</a>
+                        <a href="/api" >API</a>
+                        <a href="admin">Admin</a>
                         <a href="#">Link 3</a>
                     </div>
                 </div>
@@ -35,13 +35,24 @@
             {% endif %}
         </header>
 
-        {% block content %}
-        {% endblock %}
+        <section class="landing">
+            <section class="landing-section landing-main">
+                <div class="landing-section-content">
+                    {% block landing %}
+                    {% endblock %}
+                </div>
+            </section>
+        </section>
+
+        <section class="content">
+            {% block content %}
+            {% endblock %}
+        </section>
 
         <!-- Footer -->
         <footer class="footer">
-            <p>&copy; 2018</p>
-        </footer>
-        
+            {% block footer %}
+            {% endblock %}
+        </footer>      
     </body>
 </html>
