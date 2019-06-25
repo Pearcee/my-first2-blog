@@ -1,23 +1,16 @@
 {% extends 'pages\base.html' %}
 {% load static %}
 
-{% block head %}
-  <title>Contact Page</title>
+{% block head %}  <title>Contact Page</title>{% endblock %}
+
+{% block landing %}
+    <h1 >Contacts</h1>
+    <h2>    Stuff    </h2>
+    <p class="landing-main-text">
+        {% lorem 2 b random %}
+    </p>
 {% endblock %}
 
-{% block content %}
-    <section class="landing-section landing-main">
-        <div class="landing-section-content">
-             <h1 >Contacts</h1>
-            <h2>             Me </h2>
-            <p class="landing-main-text">
-                {% lorem  %}
-
-            </p>
-        </div>
-    </section>
-    <section class="landing-section langing-features">
-        <section class="landing-feature feature-music-services">
-        </section>
-    </section>
-{% endblock %}
+{% block footer %}
+    <p>&copy; 2018  Hello, Contact </p>
+{% endblock %}        
