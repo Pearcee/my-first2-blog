@@ -75,6 +75,9 @@
 			      	<li class="nav-item active">
 			        	<a class="nav-link" href="{% url 'post_new' %}">Add</a>
 			      	</li>
+			      	<li class="nav-item active">
+			        	<a class="nav-link" href="\admin">Admin</a>
+			      	</li>					  
 		  		</ul>
 
 		  		<ul class="navbar-nav navbar-right">
@@ -92,8 +95,8 @@
 			<div id="offlinedata">
 				<!-- the news will get displayed here from indexedDB in offline mode -->
 			</div>
-		<script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/idb.js' %}"></script>
+			<script type="text/javascript" src="{% static 'js/idbop.js' %}"></script>
 		</div>
 		<div class="footer bg-dark">
 			<p>&copy Feeds 2018</p>

@@ -6,4 +6,6 @@ urlpatterns = [
     path(r'base_layout',views.base_layout,name='base_layout'),
     path(r'getdata',views.getdata,name='getdata'),
     path(r'new', views.post_new, name='post_new'),
+    path(r'feed_upload', views.feed_upload, name='feed_upload'),
+    
 ]

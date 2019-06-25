@@ -1,7 +1,13 @@
+
+from import_export.admin import ImportExportModelAdmin
 from django.contrib import admin
+from .models import Person, feed
 
-# Register your models here.
-from .models import feed
+@admin.register(Person)
+class PersonAdmin(ImportExportModelAdmin):
+    pass
 
-
-admin.site.register(feed)
+#admin.site.register(feed)
+@admin.register(feed)
+class FeedAdmin(ImportExportModelAdmin):
+    pass
