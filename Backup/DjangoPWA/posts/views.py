@@ -10,28 +10,34 @@ from . models import feed
 import json
 
 # Create your views here.
+
+
 def index(request):
-	template='posts/index.html'
-	results=feed.objects.all()
-	jsondata = serializers.serialize('json',results)
-	context={
-		'results':results,
-		'jsondata':jsondata,
-	}
-	return render(request,template,context)
+    template = 'posts/index.html'
+    results = feed.objects.all()
+    jsondata = serializers.serialize('json', results)
+    context = {
+        'results': results,
+        'jsondata': jsondata,
+    }
+    return render(request, template, context)
+
 
 def getdata(request):
-	results=feed.objects.all()
-	jsondata = serializers.serialize('json',results)
-	return HttpResponse(jsondata)
+    results = feed.objects.all()
+    jsondata = serializers.serialize('json', results)
+    return HttpResponse(jsondata)
+
 
 def base_layout(request):
-	template='posts/base.html'
-	return render(request,template)
+    template = 'posts/base.html'
+    return render(request, template)
+
 
 def about_layout(request):
-	template='posts/about.html'
-	return render(request,template)
+    template = 'posts/about.html'
+    return render(request, template)
+
 
 def post_new(request):
     if request.method == "POST":
@@ -46,8 +52,6 @@ def post_new(request):
         form = PostForm()
     return render(request, 'posts/post_edit.html', {'form': form})
 
-from django.http import HttpResponse
-from .resources import PersonResource
 
 def export(request):
     person_resource = PersonResource()
@@ -57,7 +61,6 @@ def export(request):
     return response
 
 
-
 def simple_upload(request):
     if request.method == 'POST':
         person_resource = PersonResource()
@@ -65,19 +68,23 @@ def simple_upload(request):
         new_persons = request.FILES['myfile']
 
         imported_data = dataset.load(new_persons.read())
-        result = person_resource.import_data(dataset, dry_run=True)  # Test the data import
+        result = person_resource.import_data(
+            dataset, dry_run=True)  # Test the data import
 
         if not result.has_errors():
-            person_resource.import_data(dataset, dry_run=False)  # Actually import now
+            person_resource.import_data(
+                dataset, dry_run=False)  # Actually import now
 
     return render(request, 'core/simple_upload.html')
+
 
 def feed_export(request):
     person_resource = FeedResource()
     dataset = person_resource.export()
     response = HttpResponse(dataset.csv, content_type='text/csv')
     response['Content-Disposition'] = 'attachment; filename="feed.csv"'
-    return response	
+    return response
+
 
 def feed_upload(request):
     if request.method == 'POST':
@@ -86,9 +93,16 @@ def feed_upload(request):
         new_persons = request.FILES['myfile']
 
         imported_data = dataset.load(new_persons.read())
-        result = person_resource.import_data(dataset, dry_run=True)  # Test the data import
+        result = person_resource.import_data(
+            dataset, dry_run=True)  # Test the data import
 
         if not result.has_errors():
-            person_resource.import_data(dataset, dry_run=False)  # Actually import now
+            person_resource.import_data(
+                dataset, dry_run=False)  # Actually import now
 
     return render(request, 'posts/simple_upload.html')
+
+
+def calander_layout(request):
+    template = 'posts/calander.html'
+    return render(request, template)

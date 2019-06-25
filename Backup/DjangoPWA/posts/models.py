@@ -1,11 +1,14 @@
 from django.db import models
 
 # Create your models here.
+
+
 class feed(models.Model):
-	id=models.IntegerField(primary_key=True)
-	author=models.CharField(max_length=50)
-	title=models.CharField(max_length=100)
-	body=models.TextField()
+    id = models.AutoField(primary_key=True)
+    author = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    body = models.TextField()
+
 
 class Person(models.Model):
     name = models.CharField(max_length=30)
@@ -18,9 +21,7 @@ class Person(models.Model):
 # ['job-no', 'date-logged', 'contractor', 'latest-priority', 'appointment-time', 'appointment-date', 'date-logged-time', 'raised-by', 'access-info', 'email_address', 'place-ref', 'address', 'address##3', 'address##4', 'post-code', 'current-stage-code', 'text-line', 'status-code', 'expr1', 'asbestos', 'job-status', 'description', 'target-date']
 
 class appointments(models.Model):
-	id=models.AutoField(primary_key=True)
-	author=models.CharField(max_length=50)
-	title=models.CharField(max_length=100)
-	body=models.TextField()
-	
-
+    id = models.AutoField(primary_key=True)
+    author = models.CharField(max_length=50)
+    title = models.CharField(max_length=100)
+    body = models.TextField()
